@@ -190,7 +190,7 @@ bar {
         position top
 }
 
-default_border pixel 3
+default_border pixel 5
 exec --no-startup-id google-chrome
 gaps inner 8px
 # gaps outer 8px
