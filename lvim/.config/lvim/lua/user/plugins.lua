@@ -42,5 +42,9 @@ lvim.plugins = {
   { 'ThePrimeagen/lsp-debug-tools.nvim' },
   { 'dcampos/cmp-emmet-vim' },
   { 'mattn/emmet-vim' },
-  { 'themaxmarchuk/tailwindcss-colors.nvim' }
+  { 'themaxmarchuk/tailwindcss-colors.nvim' },
+  {
+    'dracula/vim',
+    name = 'dracula',
+  }
 }

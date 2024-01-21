@@ -1,4 +1,4 @@
-lvim.colorscheme = "tokyonight-moon"
+lvim.colorscheme = "dracula"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
 lvim.reload_config_on_save = false
