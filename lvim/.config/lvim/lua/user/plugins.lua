@@ -46,5 +46,6 @@ lvim.plugins = {
   {
     'dracula/vim',
     name = 'dracula',
-  }
+  },
+  { 'ThePrimeagen/vim-be-good' }
 }

@@ -3,11 +3,11 @@ lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
 lvim.reload_config_on_save = false
 lvim.format_on_save.enabled = true
--- lvim.transparent_window = true;
--- require("catppuccin").setup({
---   flavour = "mocha",
---   transparent_background = true,
--- })
+lvim.transparent_window = true;
+require("catppuccin").setup({
+  flavour = "mocha",
+  transparent_background = true,
+})
 
 
 local options = {
