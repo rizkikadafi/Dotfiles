@@ -2,6 +2,7 @@ reload "user.options"
 reload "user.keymaps"
 reload "user.plugins"
 reload "user.dap"
+reload "user.telescope"
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "dartls" })
 
 require 'cmp'.setup {

@@ -5,11 +5,17 @@ lvim.plugins = {
     opts = {},
     config = function(_, opts) require 'lsp_signature'.setup(opts) end
   },
-  { "catppuccin/nvim",                      name = "catppuccin", priority = 1000 },
-  -- 'natebosch/vim-lsc',
-  -- 'natebosch/vim-lsc-dart',
-  -- 'dart-lang/dart-vim-plugin',
-  -- 'thosakwe/vim-flutter'
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        transparent_background = true,
+      })
+    end
+  },
   {
     'akinsho/flutter-tools.nvim',
     lazy = false,
@@ -47,5 +53,6 @@ lvim.plugins = {
     'dracula/vim',
     name = 'dracula',
   },
-  { 'ThePrimeagen/vim-be-good' }
+  { 'ThePrimeagen/vim-be-good' },
+  { 'mbbill/undotree' },
 }
