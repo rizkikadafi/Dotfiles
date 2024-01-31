@@ -1,0 +1,9 @@
+[font]
+size = 12
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[window]
+decorations = "None"
+padding = { x = 3, y = 5 }
+opacity = 0.9
