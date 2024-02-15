@@ -7,3 +7,4 @@ family = "FiraCode Nerd Font"
 decorations = "None"
 padding = { x = 3, y = 5 }
 opacity = 0.9
+blur = true

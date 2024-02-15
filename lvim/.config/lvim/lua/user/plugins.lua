@@ -55,4 +55,5 @@ lvim.plugins = {
   },
   { 'ThePrimeagen/vim-be-good' },
   { 'mbbill/undotree' },
+  { 'jbyuki/nabla.nvim' },
 }
