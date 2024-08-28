@@ -1,5 +1,6 @@
 M = {}
 lvim.leader = "space"
+lvim.keys.normal_mode["<CR>"] = false
 
 local opts = { noremap = true, silent = true }
 -- For the description on keymaps, I have a function getOptions(desc) which returns noremap=true, silent=true and desc=desc. Then call: keymap(mode, keymap, command, getOptions("some randome desc")
@@ -8,6 +9,16 @@ lvim.builtin.which_key.mappings["n"] = {
   name = "Nabla",
   p = { "<cmd>lua require'nabla'.popup()<CR>", "popup" },
   v = { "<cmd>lua require'nabla'.toggle_virt()<CR>", "virt" },
+}
+
+lvim.builtin.which_key.mappings["M"] = {
+  name = "Molten",
+  i = { "<cmd>MoltenInit<CR>", "init" },
+  e = { "<cmd>MoltenEvaluateLine<CR>", "eval line" },
+}
+lvim.builtin.which_key.vmappings["M"] = {
+  name = "Molten",
+  e = { ":<BS><BS><BS><BS><BS>MoltenEvaluateVisual<CR>", "eval visual" },
 }
 
 local keymap = vim.keymap.set

@@ -56,4 +56,82 @@ lvim.plugins = {
   { 'ThePrimeagen/vim-be-good' },
   { 'mbbill/undotree' },
   { 'jbyuki/nabla.nvim' },
+  { "mfussenegger/nvim-dap-python" },
+  { "nvim-neotest/neotest" },
+  { "nvim-neotest/neotest-python" },
+  {
+    "barrett-ruth/live-server.nvim",
+    build = 'npm add -g live-server',
+    cmd = { 'LiveServerStart', 'LiveServerStop' },
+    config = true
+  },
+  {
+    "sindrets/diffview.nvim",
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  },
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+  },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+      rocks = { "magick" },
+    },
+  },
+  {
+    "3rd/image.nvim",
+    dependencies = { "luarocks.nvim" },
+  },
+  {
+    "benlubas/molten-nvim",
+    version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+    build = ":UpdateRemotePlugins",
+    init = function()
+      -- this is an example, not a default. Please see the readme for more configuration options
+      vim.g.molten_output_win_max_height = 12
+    end,
+  },
+  {
+    'quarto-dev/quarto-nvim',
+    'jmbuhr/otter.nvim',
+  },
+  { "rebelot/kanagawa.nvim" },
+  {
+    "nvim-neorg/neorg",
+    lazy = false,
+    version = "*",
+    dependencies = {
+      "nvim-neorg/lua-utils.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-neotest/nvim-nio",
+      "pysan3/pathlib.nvim"
+    },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+              default_workspace = "notes",
+            },
+          },
+        },
+      }
+      vim.wo.foldlevel = 99
+      vim.wo.conceallevel = 2
+    end,
+  },
 }

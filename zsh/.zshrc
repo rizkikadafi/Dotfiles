@@ -2,16 +2,22 @@
 export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.google.Chrome"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
-export JAVA_HOME="$HOME/.jdks/corretto-18.0.2"
+# export JAVA_HOME="$HOME/.jdks/corretto-18.0.2"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
 # export CPPFLAGS="-I/opt/gtk-4.12.0/include"
 # export LDFLAGS="-L/opt/gtk-4.12.0/lib/x86_64-linux-gnu"
 # export PKG_CONFIG_PATH="/opt/gtk-4.12.0/lib/x86_64-linux-gnu/pkgconfig"
 # export LD_LIBRARY_PATH="/opt/gtk-4.12.0/lib/x86_64-linux-gnu"
 # export JAVA_HOME="/usr/lib/jvm/jdk-20"
+# export GTK_IM_MODULE='fcitx'
+# export QT_IM_MODULE='fcitx'
+# export SDL_IM_MODULE='fcitx'
+# export XMODIFIERS='@im=fcitx'
+export LANG=en_US.UTF-8
 
 export PATH=$HOME/bin:$PATH
 export PATH=/opt/flutter/bin:$PATH
-export PATH=/opt/node/bin:$PATH
+# export PATH=/opt/node/bin:$PATH
 export PATH=/opt/lampp/bin:$PATH
 export PATH=$JAVA_HOME:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
@@ -24,7 +30,9 @@ export PATH=$ANDROID_SDK_ROOT/platform-tools/:$PATH
 export PATH=$ANDROID_SDK_ROOT/system-images/:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/nvim-linux64/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/lampp/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 # export PATH="/opt/gtk-4.12.0/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
@@ -132,7 +140,7 @@ alias zshconfig="lvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias xampp="sudo /opt/lampp/lampp"
 alias vim="lvim"
-alias graph="git log --all --decorate --oneline --graph"
+alias graph="git log --decorate --oneline --graph"
 alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 # alias install="sudo apt-get install"
@@ -164,7 +172,22 @@ export ZVM_VI_EDITOR='lvim'
 # keep using the default keybindings `^[` in other modes
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
+eval "$(zoxide init zsh)"
+
 # run tmux automatically on terminal startup
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
+
+[ -f "/home/kadafi/.ghcup/env" ] && . "/home/kadafi/.ghcup/env" # ghcup-env
+
+co() { g++ -std=c++20 -O2 -o "${1%.*}" $1 -Wall -Winvalid-pch; }
+run() { co $1 && ./${1%.*} & fg; }
+
+# pnpm
+export PNPM_HOME="/home/kadafi/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
