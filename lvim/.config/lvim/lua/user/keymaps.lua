@@ -11,11 +11,38 @@ lvim.builtin.which_key.mappings["n"] = {
   v = { "<cmd>lua require'nabla'.toggle_virt()<CR>", "virt" },
 }
 
+-- Neorg --
+lvim.builtin.which_key.mappings["N"] = {
+  name = "Neorg",
+  n = { "<Plug>(neorg.dirman.new-note)", "new note" },
+  t = { {
+    u = { "<Plug>(neorg.qol.todo-items.todo.task-undone)", "Mark as Undone" },
+    p = { "<Plug>(neorg.qol.todo-items.todo.task-pending)", "Mark as Pending" },
+    d = { "<Plug>(neorg.qol.todo-items.todo.task-done)", "Mark as Done" },
+    h = { "<Plug>(neorg.qol.todo-items.todo.task-on-hold)", "Mark as On Hold" },
+    c = { "<Plug>(neorg.qol.todo-items.todo.task-cancelled)", "Mark as Cancelled" },
+    r = { "<Plug>(neorg.qol.todo-items.todo.task-recurring)", "Mark as Recurring" },
+    i = { "<Plug>(neorg.qol.todo-items.todo.task-important)", "Mark as Important" },
+    a = { "<Plug>(neorg.qol.todo-items.todo.task-ambigous)", "Mark as Ambigous" },
+  }, "Todo" },
+  l = { {
+    t = { "<Plug>(neorg.pivot.list.toggle)", "Toggle (Un)ordered List" },
+    i = { "<Plug>(neorg.pivot.list.invert)", "Invert Toggle (Un)ordered List" },
+  }, "List" },
+  i = { {
+    d = { "<Plug>(neorg.tempus.insert-date)", "Insert Date" },
+  }, "Insert" },
+  c = { {
+    m = { "<Plug>(neorg.looking-glass.magnify-code-block)", "Magnify Code Block" },
+  }, "Code" }
+}
+
 lvim.builtin.which_key.mappings["M"] = {
   name = "Molten",
   i = { "<cmd>MoltenInit<CR>", "init" },
   e = { "<cmd>MoltenEvaluateLine<CR>", "eval line" },
 }
+
 lvim.builtin.which_key.vmappings["M"] = {
   name = "Molten",
   e = { ":<BS><BS><BS><BS><BS>MoltenEvaluateVisual<CR>", "eval visual" },
@@ -23,7 +50,7 @@ lvim.builtin.which_key.vmappings["M"] = {
 
 local keymap = vim.keymap.set
 
-keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
+-- keymap("n", "<S-Space>", "<cmd>WhichKey \\<space><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Normal --

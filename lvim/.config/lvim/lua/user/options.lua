@@ -1,4 +1,4 @@
-lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "catppuccin"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
 lvim.reload_config_on_save = false

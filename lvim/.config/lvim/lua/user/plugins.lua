@@ -77,10 +77,6 @@ lvim.plugins = {
     end,
   },
   {
-    'neoclide/coc.nvim',
-    branch = 'release',
-  },
-  {
     "vhyrro/luarocks.nvim",
     priority = 1001, -- this plugin needs to run before anything else
     opts = {
@@ -113,25 +109,11 @@ lvim.plugins = {
       "nvim-neorg/lua-utils.nvim",
       "MunifTanjim/nui.nvim",
       "nvim-neotest/nvim-nio",
-      "pysan3/pathlib.nvim"
+      "pysan3/pathlib.nvim",
     },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {},
-          ["core.concealer"] = {},
-          ["core.dirman"] = {
-            config = {
-              workspaces = {
-                notes = "~/notes",
-              },
-              default_workspace = "notes",
-            },
-          },
-        },
-      }
-      vim.wo.foldlevel = 99
-      vim.wo.conceallevel = 2
-    end,
   },
+  {
+    "folke/zen-mode.nvim",
+    opts = {}
+  }
 }
