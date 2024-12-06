@@ -1,10 +1,9 @@
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "kanagawa-wave"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
 lvim.reload_config_on_save = false
 lvim.format_on_save.enabled = true
 -- lvim.transparent_window = true;
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "" })
 
 local options = {
   backup = false,                          -- creates a backup file

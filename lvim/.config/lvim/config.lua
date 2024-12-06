@@ -6,6 +6,8 @@ reload "user.telescope"
 reload "user.neorg"
 reload "user.copilot"
 
+lvim.lsp.automatic_configuration.skipped_servers = { "kotlin_language_server" }
+
 require 'cmp'.setup {
   sources = {
     {

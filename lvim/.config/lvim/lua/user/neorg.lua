@@ -8,6 +8,8 @@ require("neorg").setup {
           notes = "~/Documents/notes",
           compsci = "~/Documents/notes/compsci",
           lectures = "~/Documents/notes/lectures",
+          todos = "~/Documents/notes/todos",
+          ideas = "~/Documents/notes/ideas"
         },
         default_workspace = "notes",
       },

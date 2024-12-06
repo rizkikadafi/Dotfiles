@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export CHROME_EXECUTABLE="/var/lib/flatpak/exports/bin/com.google.Chrome"
+# export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
 # export JAVA_HOME="$HOME/.jdks/corretto-18.0.2"
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+# export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+export JAVA_HOME="$HOME/.jdks/jdk-22.0.2"
 # export CPPFLAGS="-I/opt/gtk-4.12.0/include"
 # export LDFLAGS="-L/opt/gtk-4.12.0/lib/x86_64-linux-gnu"
 # export PKG_CONFIG_PATH="/opt/gtk-4.12.0/lib/x86_64-linux-gnu/pkgconfig"
@@ -21,13 +22,14 @@ export PATH=/opt/flutter/bin:$PATH
 export PATH=/opt/lampp/bin:$PATH
 export PATH=$JAVA_HOME:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
-export PATH=$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$PATH
-export PATH=$ANDROID_SDK_ROOT/cmdline-tools:$PATH
-export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest:$PATH
-export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
-export PATH=$ANDROID_SDK_ROOT/emulator/:$PATH
-export PATH=$ANDROID_SDK_ROOT/platform-tools/:$PATH
-export PATH=$ANDROID_SDK_ROOT/system-images/:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID_HOME/emulator/:$PATH
+export PATH=$ANDROID_HOME/platform-tool/:$PATH
+export PATH=$ANDROID_HOME/system-images/:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/nvim-linux64/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
@@ -191,3 +193,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
